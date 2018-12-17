@@ -54,13 +54,34 @@ Das Kommunikationsprotokoll ist ein einfaches zustandsloses Protokoll basierend 
 
  ![alt text](https://github.com/winmam14/Protokoll-5/blob/master/modbus_general_modbus_frame_png.png)
 
+### 4.1 Daten-Modell  
+Das Modbus Daten-Modell unterscheidet vier Tabellen (Adressräume) für:  
+
+* **Discrete Inputs**  
+Ein Discrete Input ist ein einzelnes Bit, das nur gelesen werden kann.  
+Beispiele: ein Taster, ein Endschalter, ...   
   
-### 4.1 Modbus-ASCII
+* **Coils**  
+Eine Coil ist ein Bit das gelesen und beschrieben werden kann.  
+Der Name stammt vermutlich von der Spule eines Relais.  
+Beispiele: ein Relais, eine LED, ...  
+  
+* **Input Registers**  
+Ein Input-Register ist ein 16-Bit Wert der nur gelesen werden kann.  
+Beispiele: ein Temperatursensor, ein ADC, die Geräte-ID, ...  
+  
+* **Hold-Registers**  
+Ein Hold-Register ist ein 16-Bit Wert der gelesen und beschrieben werden kann.  
+Beispiele: PWM-Einheit, DAC, ...  
+
+### 4.2 Modbus-ASCII
 Im ASCII Transmission Mode werden die Frame-Bytes als ASCII-Text versendet. Für die Konfiguration der seriellen Schnittstelle werden standardmäßig nur 7 Daten-Bits verwendet! Geräte dürfen im Bedarfsfall aber auch eine davon abweichende Festlegung haben.   
 
 Jeder Modbus **Serial Line ASCII Frame** hat folgenden Aufbau:  
  ![alt text](https://github.com/winmam14/Protokoll-5/blob/master/modbus_serial_ascii_frame_png.png)  
-    
+ 
+ #### Unterrichts Beispiel
+ 
  Die im Unterricht als Beispiel gebrachte ADU ist die Request um einen Sensor auszlesen:  
  ``` 
  :010400000001BA<CR><LF>
@@ -70,10 +91,10 @@ Die PDU für dieses Beispiel sieht wie folgt aus:
  0400000001
  ```    
 
-### 4.2 Modbus-RTU
+### 4.3 Modbus-RTU
 
-### 4.3 Modbus-TCP  
+### 4.4 Modbus-TCP  
 
 
-### 4.4 LRC
+### 4.5 LRC
 Longitudinal Redundancy Check kurz **LRC** ist ein Verfahren zur Erkennung von 1-Bit **Fehlern** bei digitaler Datenübertragung, indem über eine gewisse Anzahl von übertragenen Datenwörtern eine **Prüfsumme** gebildet wird. Diese Prüfsumme wird dann am Ende des **Frames** angehängt und mit versendet. Um die Prüfsumme zu bilden werden alle Bytes des Frames **exklusive** dem Start ':' und dem Ende (CR + LF) mit 8-Bit Additionen **ohne** Berücksichtigung des **Überlaufs** zusammenaddiert und am Ende einem Zweierkomplement unterzogen.
