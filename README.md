@@ -29,7 +29,7 @@ Echtzeitfähigkeit bedeutet, dass die Übertragung von Daten immer verlässlich 
 Ein Beispiele für eine echtzeitfähige Schnittstelle ist **RS485**.  
 
 ### 1.1.1 RS485
-Die **RS485-Schnittstelle** ist eine aufwandsarme serielle Schnittstelle für die Datenkommunikation über große Entfernungen. Sie stellt ein bidirektional nutzbares Bussystem dar, das mit bis zu **128 Geräten** an einem Bus betrieben werden kann. Die Datenübertragung erfolgt symmetrisch, massefrei als Spannungsdifferenz (Differenz: < -0,3 V = H, > +0,3 V = L) zwischen den beiden Busleitungen A (invertierte Leitung) und B (nicht invertierte Leitung), so können sich Gleichtaktstörungen auf der Leitung nicht störend auswirken. Wichtig ist ein Abschluss der Leitung an jedem Ende des Busses mit einem Abschlusswiderstand von 120 Ω.
+Die **RS485-Schnittstelle** ist eine aufwandsarme serielle Schnittstelle für die Datenkommunikation über große Entfernungen. Sie stellt ein bidirektional nutzbares Bussystem dar, das mit bis zu **128 Geräten** an einem Bus betrieben werden kann. Die Datenübertragung erfolgt symmetrisch, massefrei als Spannungsdifferenz (Differenz: < -0,3 V = H, > +0,3 V = L) zwischen den beiden Busleitungen A (invertierte Leitung) und B (nicht invertierte Leitung), so können sich Gleichtaktstörungen auf der Leitung nicht störend auswirken.  
   ![alt text](https://files.elv.com/bilder/elvexpertenwissen/gross/rs485_bus01.jpg)
 
 ### 1.2 Nicht Echtzeitfähige Schnittstellen
