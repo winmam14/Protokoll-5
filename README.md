@@ -1,5 +1,5 @@
 # Protokoll 5
-## Thema: Thema: Schnittstellen und Feldbus
+## Thema: Schnittstellen und Feldbus
 **Professor:** SX  
 **Übungsdatum:** 11.12.2018  
 **Author, KNr.:** Winter Matthias, 17  
@@ -13,6 +13,11 @@
 ##### 1.2 Nicht Echtzeitfähige Schnittstellen
 #### 3. Feldbus
 #### 4. Modbus-Protokoll
+##### 4.1 Daten-Modell
+##### 4.2 Modbus-ASCII
+##### 4.3 4.3 Modbus-RTU
+##### 4.4 4.4 Modbus-TCP  
+##### 4.5 LRC
 
 --- 
 
@@ -92,9 +97,17 @@ Die PDU für dieses Beispiel sieht wie folgt aus:
  ```    
 
 ### 4.3 Modbus-RTU
+Die Abkürzung **RTU** steht für die **„Remote Terminal Unit“**, also die entfernte Terminaleinheit. Der Zweck von Modbus RTU ist die Übertragung von Daten in einer **binären Form**. Diese Dateien können demnach im Gegensatz zu einer einfachen Textdatei auch nicht-alphabetische Zeichen enthalten. Zwar können solche binären Daten **nicht unmittelbar** von einem Menschen **ausgewertet** werden, da hierfür erst einmal die Umwandlung in ein lesbares Format erforderlich ist, dennoch liegt der Vorteil dieser Methode in dem **guten Datendurchsatz**.  
+  
+  Wie auch die anderen beiden Protokollvarianten, die des **Modbus ASCII** und des **Modbus TCP**, basiert diese Version ebenso auf dem **Master-Slave-System**. Innerhalb dieses Netzwerks ist es erforderlich, dass jeder Busteilnehmer **eindeutig** eine Adresse zugeordnet bekommt und somit von den anderen Teilnehmern direkt angesprochen und identifiziert werden kann. 
 
 ### 4.4 Modbus-TCP  
+Die Länge eines **Datenblocks**, der in einem Modbus-Telegramm übertragen werden kann, beträgt **252 Bytes**. Diese Restriktion geht auf die ursprüngliche Definition des Modbus-Protokolls zurück, bei der die Maximallänge eines Telegramms auf 256 Bytes festgelegt wurde. In diesem Telegramm sind folgende Bestandteile enthalten:  
 
+* **Geräteadresse**: 1 Byte  
+* **Function Code**: 1 Byte. Mit diesem Function Code wird festgelegt, welche Operation auf Grund eines Requests durch den Server ausgeführt werden soll.  
+* **Datensicherung mit CRC**: 2 Bytes  
+Aus dieser Betrachtung ergibt sich die Länge des Nutzdatenblocks von 252 Bytes, die auch bei **Modbus/TCP** erhalten geblieben ist. Als Folge hieraus lassen sich Modbus-Requests mit **minimalem Aufwand** von seriellen Übertragungsstrecken über ein Gateway auf Ethernet umsetzen. Die Art und Weise des Zugriffs auf Gerätedaten wird über Funktionscodes gesteuert.  
 
 ### 4.5 LRC
 Longitudinal Redundancy Check kurz **LRC** ist ein Verfahren zur Erkennung von 1-Bit **Fehlern** bei digitaler Datenübertragung, indem über eine gewisse Anzahl von übertragenen Datenwörtern eine **Prüfsumme** gebildet wird. Diese Prüfsumme wird dann am Ende des **Frames** angehängt und mit versendet. Um die Prüfsumme zu bilden werden alle Bytes des Frames **exklusive** dem Start ':' und dem Ende (CR + LF) mit 8-Bit Additionen **ohne** Berücksichtigung des **Überlaufs** zusammenaddiert und am Ende einem Zweierkomplement unterzogen.
