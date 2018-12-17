@@ -34,7 +34,21 @@ Keine Echtzeitfähigkeit bedeutet, dass die Übertragung von Daten nicht immer v
 Ethernet finded verwendung wenn man sehr große Datenmengen hat die man übertrage muss, es jedoch nicht sehr schlimm ist wenn man keine Echtzeitfähigkeit hat. Ethernet kann aber mit ein paar Modifikationen echtzeitfähig gemacht werden. Hersteller die ihr eigens echtzeitfähiges Ethernet bereits entwickelt haben sind zum Beispiel B&R mit **"Power Link"** und Profinet.
 
 ## 3. Feldbus
-Feldbus ist ein Bussystem welches zur Komunikation von Sensoren und Aktoren verwendet wird. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, **wer** (Kennung), **was** (Messwert, Befehl), **wann** (Initiative), sagt. Hierfür gibt es normierte **Protokolle**.
-![alt text](https://www.bilder-upload.eu/thumb/5b9c37-1545070243.png)
+Feldbus ist ein Bussystem welches zur Komunikation von Sensoren und Aktoren verwendet wird. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, **wer** (Kennung), **was** (Messwert, Befehl), **wann** (Initiative), sagt. Hierfür gibt es normierte **Protokolle**.  
+## Normierte Protokolle  
+
+Anwendung | Protokolle
+----------|------
+Industire | Profibus, Powerlink, Interbus-5
+Automotive | LIN, CAN, Flexray
+Gebäudetechnik | KNX,  HomeMatic, LON, CAN, **Modbus**
+Industrie 4.0 | Web-Dienst, HTTP-Protokoll, Rest-Server
 
 ## 4. Modbus-Protokoll
+Das Kommunikationsprotokoll ist ein einfaches zustandsloses Protokoll basierend auf einem Request/Response Prinzip. Grundsätzlich unterscheidet man zwischen **drei** Varianten:   
+  
+  
+* **1. Modbus ASCII** Rein textuelle byteweise Übertragung von Daten.  
+* **Modbus RTU** Binäre byteweise Übertragung von Daten.  
+* **3. Modbus TCP** Übertragung der Daten in TCP Paketen.  
+
