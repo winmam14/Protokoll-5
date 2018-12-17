@@ -106,7 +106,8 @@ Die Länge eines **Datenblocks**, der in einem Modbus-Telegramm übertragen werd
 
 * **Geräteadresse**: 1 Byte  
 * **Function Code**: 1 Byte. Mit diesem Function Code wird festgelegt, welche Operation auf Grund eines Requests durch den Server ausgeführt werden soll.  
-* **Datensicherung mit CRC**: 2 Bytes  
+* **Datensicherung mit CRC**: 2 Bytes    
+
 Aus dieser Betrachtung ergibt sich die Länge des Nutzdatenblocks von 252 Bytes, die auch bei **Modbus/TCP** erhalten geblieben ist. Als Folge hieraus lassen sich Modbus-Requests mit **minimalem Aufwand** von seriellen Übertragungsstrecken über ein Gateway auf Ethernet umsetzen. Die Art und Weise des Zugriffs auf Gerätedaten wird über Funktionscodes gesteuert.  
 
 ### 4.5 LRC
