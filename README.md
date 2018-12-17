@@ -35,6 +35,6 @@ Ethernet finded verwendung wenn man sehr große Datenmengen hat die man übertra
 
 ## 3. Feldbus
 Feldbus ist ein Bussystem welches zur Komunikation von Sensoren und Aktoren verwendet wird. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, **wer** (Kennung), **was** (Messwert, Befehl), **wann** (Initiative), sagt. Hierfür gibt es normierte **Protokolle**.
-![alt text]()
+![alt text](https://www.bilder-upload.eu/thumb/5b9c37-1545070243.png)
 
 ## 4. Modbus-Protokoll
