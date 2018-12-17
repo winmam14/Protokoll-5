@@ -51,7 +51,8 @@ Das Kommunikationsprotokoll ist ein einfaches zustandsloses Protokoll basierend 
 * **Modbus ASCII** Rein textuelle byteweise Übertragung von Daten.  
 * **Modbus RTU** Binäre byteweise Übertragung von Daten.  
 * **Modbus TCP** Übertragung der Daten in TCP Paketen.   
- ![alt text]()
+
+ ![alt text](https://github.com/winmam14/Protokoll-5/blob/master/modbus_general_modbus_frame_png.png)
 
   
 ### 4.1 Modbus-ASCII
