@@ -21,7 +21,7 @@ Eine Schnittstelle dient zur Komunikation verschiedener Systeme oder einzelner K
 
 ### 1.1 Echtzeitfähige Schnittstellen
 Echtzeitfähigkeit bedeutet, dass die Übertragung von Daten immer verlässlich innerhalb einer festgelegten Zeit erfolgen kann.
-Ein Beispiele für eine echtzeitfähige Schnittstelle ist **S485**.  
+Ein Beispiele für eine echtzeitfähige Schnittstelle ist **RS485**.  
 
 ### 1.1.1 RS485
 Die **RS485-Schnittstelle** ist eine aufwandsarme serielle Schnittstelle für die Datenkommunikation über große Entfernungen. Sie stellt ein bidirektional nutzbares Bussystem dar, das mit bis zu **128 Geräten** an einem Bus betrieben werden kann. Die Datenübertragung erfolgt symmetrisch, massefrei als Spannungsdifferenz (Differenz: < -0,3 V = H, > +0,3 V = L) zwischen den beiden Busleitungen A (invertierte Leitung) und B (nicht invertierte Leitung), so können sich Gleichtaktstörungen auf der Leitung nicht störend auswirken. Wichtig ist ein Abschluss der Leitung an jedem Ende des Busses mit einem Abschlusswiderstand von 120 Ω.
@@ -48,7 +48,17 @@ Industrie 4.0 | Web-Dienst, HTTP-Protokoll, Rest-Server
 Das Kommunikationsprotokoll ist ein einfaches zustandsloses Protokoll basierend auf einem Request/Response Prinzip. Grundsätzlich unterscheidet man zwischen **drei** Varianten:   
   
   
-* **1. Modbus ASCII** Rein textuelle byteweise Übertragung von Daten.  
+* **Modbus ASCII** Rein textuelle byteweise Übertragung von Daten.  
 * **Modbus RTU** Binäre byteweise Übertragung von Daten.  
-* **3. Modbus TCP** Übertragung der Daten in TCP Paketen.  
+* **Modbus TCP** Übertragung der Daten in TCP Paketen.   
+ ![alt text]()
 
+  
+### 4.1 Modbus-ASCII
+
+### 4.2 Modbus RTU
+
+### 4.3 Modbus-TCP
+
+### 4.4 LRC
+Longitudinal Redundancy Check kurz **LRC** ist ein Verfahren zur Erkennung von 1-Bit **Fehlern** bei digitaler Datenübertragung, indem über eine gewisse Anzahl von übertragenen Datenwörtern eine **Prüfsumme** gebildet wird. Diese Prüfsumme wird dann am Ende des **Frames** angehängt und mit versendet. Um die Prüfsumme zu bilden werden alle Bytes des Frames **exklusive** dem Start ':' und dem Ende (CR + LF) mit 8-Bit Additionen **ohne** Berücksichtigung des **Überlaufs** zusammenaddiert und am Ende einem Zweierkomplement unterzogen.
