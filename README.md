@@ -8,16 +8,19 @@
 ---
 
 ## Stundenübersicht
-#### 1. Schnittstellen
-##### 1.1 Echtzeitfähige Schnittstllen
-##### 1.2 Nicht Echtzeitfähige Schnittstellen
-#### 3. Feldbus
-#### 4. Modbus-Protokoll
-##### 4.1 Daten-Modell
-##### 4.2 Modbus-ASCII
-##### 4.3 4.3 Modbus-RTU
-##### 4.4 4.4 Modbus-TCP  
-##### 4.5 LRC
+### 1. Schnittstellen
+#### 1.1 Echtzeitfähige Schnittstllen
+##### 1.1.1 RS485
+#### 1.2 Nicht Echtzeitfähige Schnittstellen
+##### 1.2.1 Ethernet
+### 2. Feldbus
+### 3. Normierte Feldbus Protokolle  
+### 4. Modbus-Protokoll
+#### 4.1 Daten-Modell
+#### 4.2 Modbus-ASCII
+#### 4.3 Modbus-RTU
+#### 4.4 Modbus-TCP  
+#### 4.5 LRC
 
 --- 
 
@@ -38,9 +41,9 @@ Keine Echtzeitfähigkeit bedeutet, dass die Übertragung von Daten nicht immer v
 ### 1.2.1 Ethernet
 Ethernet finded verwendung wenn man sehr große Datenmengen hat die man übertrage muss, es jedoch nicht sehr schlimm ist wenn man keine Echtzeitfähigkeit hat. Ethernet kann aber mit ein paar Modifikationen echtzeitfähig gemacht werden. Hersteller die ihr eigens echtzeitfähiges Ethernet bereits entwickelt haben sind zum Beispiel B&R mit **"Power Link"** und Profinet.
 
-## 3. Feldbus
+## 2. Feldbus
 Feldbus ist ein Bussystem welches zur Komunikation von Sensoren und Aktoren verwendet wird. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, **wer** (Kennung), **was** (Messwert, Befehl), **wann** (Initiative), sagt. Hierfür gibt es normierte **Protokolle**.  
-## Normierte Protokolle  
+## 3. Normierte Feldbus Protokolle  
 
 Anwendung | Protokolle
 ----------|------
