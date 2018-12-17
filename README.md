@@ -56,10 +56,17 @@ Das Kommunikationsprotokoll ist ein einfaches zustandsloses Protokoll basierend 
 
   
 ### 4.1 Modbus-ASCII
+Im ASCII Transmission Mode werden die Frame-Bytes als ASCII-Text versendet. Für die Konfiguration der seriellen Schnittstelle werden standardmäßig nur 7 Daten-Bits verwendet! Geräte dürfen im Bedarfsfall aber auch eine davon abweichende Festlegung haben.   
 
-### 4.2 Modbus RTU
+Jeder Modbus **Serial Line ASCII Frame** hat folgenden Aufbau:  
+ ![alt text](https://github.com/winmam14/Protokoll-5/blob/master/modbus_serial_ascii_frame_png.png)  
+    
+ Die im Unterricht als Beispiel gebrachte ADU ist die Request um einen Sensor auszlesen.
+ ``` :010400000001BA<CR><LF> ```
+### 4.2 Modbus-RTU
 
-### 4.3 Modbus-TCP
+### 4.3 Modbus-TCP  
+
 
 ### 4.4 LRC
 Longitudinal Redundancy Check kurz **LRC** ist ein Verfahren zur Erkennung von 1-Bit **Fehlern** bei digitaler Datenübertragung, indem über eine gewisse Anzahl von übertragenen Datenwörtern eine **Prüfsumme** gebildet wird. Diese Prüfsumme wird dann am Ende des **Frames** angehängt und mit versendet. Um die Prüfsumme zu bilden werden alle Bytes des Frames **exklusive** dem Start ':' und dem Ende (CR + LF) mit 8-Bit Additionen **ohne** Berücksichtigung des **Überlaufs** zusammenaddiert und am Ende einem Zweierkomplement unterzogen.
