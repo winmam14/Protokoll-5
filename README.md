@@ -60,7 +60,8 @@ Das Kommunikationsprotokoll ist ein einfaches zustandsloses Protokoll basierend 
 * **Modbus RTU** Binäre byteweise Übertragung von Daten.  
 * **Modbus TCP** Übertragung der Daten in TCP Paketen.   
 
- ![alt text](https://github.com/winmam14/Protokoll-5/blob/master/modbus_general_modbus_frame_png.png)
+ ![alt text](https://github.com/winmam14/Protokoll-5/blob/master/modbus_general_modbus_frame_png.png)  
+ Quelle: LMS Skript
 
 ### 4.1 Daten-Modell  
 Das Modbus Daten-Modell unterscheidet vier Tabellen (Adressräume) für:  
@@ -87,6 +88,7 @@ Im ASCII Transmission Mode werden die Frame-Bytes als ASCII-Text versendet. Für
 
 Jeder Modbus **Serial Line ASCII Frame** hat folgenden Aufbau:  
  ![alt text](https://github.com/winmam14/Protokoll-5/blob/master/modbus_serial_ascii_frame_png.png)  
+ Quelle: LMS Skript
  
  #### Unterrichts Beispiel
  
